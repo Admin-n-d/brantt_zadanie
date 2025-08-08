@@ -1,0 +1,20 @@
+{
+  "apiVersion": 2,
+  "name": "brantt/latest-posts",
+  "title": "Latest Posts Section",
+  "category": "widgets",
+  "icon": "admin-post",
+  "description": "Sekcja z 4 najnowszymi postami.",
+  "supports": { "html": false },
+  "attributes": {
+    "eyebrow": { "type": "string", "default": "Latest posts" },
+    "title":   { "type": "string", "default": "Lorem ipsum dolor sit amet…" },
+    "viewAllText": { "type": "string", "default": "View all posts" },
+    "viewAllUrl":  { "type": "string", "default": "/blog" },
+    "order": { "type": "string", "default": "DESC" }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

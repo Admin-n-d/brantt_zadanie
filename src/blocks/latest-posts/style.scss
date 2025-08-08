@@ -1,0 +1,198 @@
+.latest-posts {
+  --bg: #eef6f4;           // jasne tło sekcji
+  --ink: #0f2b2a;          // ciemny tekst
+  --muted: #66737a;
+  --brand: #1f9f8a;        // zielony przycisku
+  --accent: #e44f43;       // czerwony badge
+  --Navy: #1B3454;
+
+  font-family: 'Montserrat';
+  padding: clamp(24px, 4vw, 48px);
+  background: var(--bg);
+  color: var(--ink);
+
+  .lp-header {
+    position: relative;
+  }
+  .lp-eyebrow {
+    color: var(--Red, #FF4043);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 31.2px */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  .lp-title-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .lp-title {
+    margin: 0;
+    color: var(--Navy);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 48px */
+    letter-spacing: 1px;
+  }
+  .lp-viewall {
+    font-family: 'Roboto';
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .lp-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 22px;
+  }
+
+  .lp-card {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+
+    .lp-thumb {
+      display:block;
+      position:relative;
+      overflow:hidden;
+    }
+    .lp-thumb img {
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .lp-body, .lp-meta {
+      padding: 18px;
+    }
+    .lp-card-title {
+      margin: 8px 0;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+    .lp-card-title a {
+      color: var(--Navy);
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .lp-excerpt {
+      margin: 0;
+      color: var(--Navy);
+      font-family: 'Roboto';
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 145%; /* 27.55px */
+    }
+    .lp-more {
+      font-family: 'Roboto';
+      display:inline-block;
+      padding: 15px 0px 10px 15px;
+      font-weight:700;
+      text-decoration:none;
+      font-size: 18px;
+      position: absolute;
+      bottom: 0;
+      background: var(--Green, #22B4AB);
+      color:#fff;
+      left: 0;
+      right: 0;
+      opacity :0;
+      transition: opacity .2s;
+    }
+  }
+
+  .lp-card--featured {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr; gap: 22px;
+    background: #fff;
+
+    .lp-meta {
+      padding: 22px;
+    }
+    .lp-badge {
+      display:inline-block;
+      color: var(--accent);
+      font-weight:800;
+      text-transform:uppercase;
+      font-size: 11px;
+      padding:6px 8px;
+      margin-bottom:10px;
+    }
+    .lp-card-title {
+      font-size: 20px;
+    }
+
+  }
+  .lp-card--small {
+    position: relative;
+    grid-column: span 4;
+    position:relative;
+    transition: filter .2s, margin .2s;
+    filter: drop-shadow(0 40px 140px transparent);
+
+    .lp-body {
+      padding-bottom:50px;
+    }
+
+  }
+  .lp-card--small:hover {
+    filter: drop-shadow(0 40px 140px rgba(0, 0, 0, 0.25));
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+    .lp-more {
+      opacity: 1;
+    }
+  }
+  .lp-card--small .lp-thumb {
+    aspect-ratio: 4/3;
+  }
+  .lp-card--small .lp-diagonal{
+    background: #137450;
+    content: "";
+    height: 400px;
+    width: 400px;
+    inset: auto 0 0 0;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    position: absolute;
+    transform: rotate(45deg);
+    left: -200px;
+    bottom: -120%;
+  }
+  .lp-card--small:nth-child(3) .lp-diagonal {
+    background: #FC4145;
+  }
+  .lp-card--small:nth-child(4) .lp-diagonal {
+    background: #FAC722;
+  }
+  @media (max-width: 1024px) {
+    .lp-card--featured { grid-template-columns: 1fr; }
+    .lp-card--small { grid-column: span 6; }
+  }
+  @media (max-width: 640px) {
+    .lp-card--small { grid-column: span 12; }
+  }
+
+}
