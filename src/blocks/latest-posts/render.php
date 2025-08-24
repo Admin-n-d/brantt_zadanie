@@ -36,7 +36,7 @@ $featured = array_shift( $posts ); // pierwszy jako featured
                 <?php echo get_the_post_thumbnail( $featured, 'large' ); ?>
             </a>
             <div class="lp-meta">
-                <span class="lp-badge">★ Featured post</span>
+                <span class="lp-badge">☆ Featured post</span>
                 <h3 class="lp-card-title">
                     <a href="<?php echo get_permalink( $featured ); ?>">
                         <?php echo esc_html( get_the_title( $featured ) ); ?>

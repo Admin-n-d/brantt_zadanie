@@ -20,3 +20,10 @@
     .lp-card--small { grid-column: span 12; }
   }
 }
+/* ujednolicenie wyglądu inline-edits */
+.latest-posts {
+  .lp-viewall-wrap { display:flex; align-items:center; gap:8px; }
+  .lp-thumb--ph { background:#eef1f3; width:100%; aspect-ratio: 16/10; }
+  .components-placeholder.lp-ph { grid-column: span 12; }
+  a.lp-viewall[contenteditable="true"] { border-bottom: 1px dashed currentColor; outline: none; }
+}
